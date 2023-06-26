@@ -75,7 +75,7 @@ int parser(const char *format, conver_t f_list[], va_list arg_list)
 
 /**
  * print_char - prints characters
- * @arg_list; argument list
+ * @arg_list: argument list
  * Return: 1
  */
 int print_char(va_list arg_list)
