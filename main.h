@@ -16,6 +16,7 @@ int print_char(va_list arg_list);
 int print_string(va_list arg_list);
 int print_percent(va_list arg_list);
 int print_decimal(va_list arg_list);
+int print_number(va_list arg_list);
 int parser(const char *format, conver_t f_list[], va_list arg_list);
 int _printf(const char *format, ... );
 
