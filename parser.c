@@ -2,7 +2,7 @@
 /**
  * parser - printf helper
  * @format: the format
- * @f-list: the function list
+ * @f_list: the function list
  * @arg_list: argumen list
  * Return: integer
  */

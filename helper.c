@@ -10,7 +10,7 @@ int print_char(va_list arg_list)
 
 	c = (char)va_arg(arg_list, int);
 	putchar(c);
-	return(1);
+	return (1);
 }
 /**
  * print_string - prints a sting
