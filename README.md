@@ -37,7 +37,13 @@ The avaliable conversion specifiers are:
 
 int main(void)
 {
+	int p = 12345;
+	char c = 'A';
+	char s = "John";
+
+	_printf("Hello, %s !The character is %c and this is a percentage sign %%, printing decimal %d.\n", c, s, p);
 	
+	return (0);
 }
 
 ```
