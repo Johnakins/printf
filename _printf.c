@@ -20,8 +20,6 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 
-	printed_chars = 0;
-
 	if (format == NULL)
 	{
 		return (-1);
