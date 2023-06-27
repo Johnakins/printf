@@ -64,14 +64,14 @@ int parser(const char *format, conver_t f_list[], va_list arg_list)
 			}
 			if (f_list[i].sys == NULL)
 			{
-				putchar('%');
-				putchar(*format);
+				_putchar('%');
+				_putchar(*format);
 				count += 2;
 			}
 		}
 		else
 		{
-			putchar(*format);
+			_putchar(*format);
 			count++;
 		}
 		format++;
