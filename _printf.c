@@ -42,46 +42,38 @@ int parser(const char *format, conver_t f_list[], va_list arg_list)
 {
 	int i;
 	int count;
-	int j;
-	int v;
 
 	count = 0;
-	for (i = 0; format[i] != '\0'; i++)
+	while (*format != '\0')
 	{
-		if (format[i] == '%')
+		if (*format == '%')
 		{
-			for (j = 0; f_list[j].sys != NULL; j++)
+			format++;
+
+			i = 0;
+			while (f_list[i].sys != NULL)
 			{
-				v = f_list[j].f(arg_list);
-				if (v == -1)
+				if (*format == *(f_list[i].sys))
 				{
-					return (-1);
-					count += v;
-					break;
+				count += f_list[i].f(arg_list);
+				break;
 				}
+				i++;
 			}
-			if (f_list[j].sys == NULL && format[i + 1] != ' ')
+			if (f_list[i].sys == NULL)
 			{
-				if (format[i + 1] != '\0')
-				{
-					putchar(format[i]);
-					putchar(format[i + 1]);
-					count = count + 2;
-				}
-				else
-				{
-					return (-1);
-				}
+				putchar('%');
+				putchar(*format);
+				count += 2;
 			}
-			i = i + 1;
 		}
 		else
 		{
-			putchar(format[i]);
+			putchar(*format);
 			count++;
 		}
+		format++;
 	}
-	
 	return (count);
 }
 
