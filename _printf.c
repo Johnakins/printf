@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 /**
  * _printf - produces output according to a format
  * @format: the format
@@ -9,6 +10,7 @@ int _printf(const char *format, ...)
 	va_list arg_list;
 	int printed_chars;
 
+	
 	conver_t va_list[] = {
 		{"c", print_char},
 		{"s", print_string},
@@ -17,6 +19,8 @@ int _printf(const char *format, ...)
 		{"i", print_decimal},
 		{NULL, NULL}
 	};
+
+	printed_chars = 0;
 
 	if (format == NULL)
 	{
